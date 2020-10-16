@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ReactNativePackager" nodePath="project" reactNativePackagePath="$USER_HOME$/.nvm/versions/node/v12.18.3/lib/node_modules/react-native-cli" workingDirectory="$PROJECT_DIR$/mobile" />
+</project>
