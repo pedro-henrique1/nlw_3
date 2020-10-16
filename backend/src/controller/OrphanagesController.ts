@@ -48,7 +48,7 @@ export default {
             about,
             instructions,
             open_hours,
-            open_on_weekends,
+            open_on_weekends: open_on_weekends === true ,
             images,
         };
 
@@ -60,7 +60,11 @@ export default {
             instructions: Yup.string().required().max(300),
             open_hours: Yup.string().required(),
             open_on_weekends: Yup.boolean().required(),
-            images: Yup.string().required(),
+            images: Yup.array(
+                Yup.object().shape({
+                    path: Yup.string().required()
+                })
+            )
         });
         await schema.validate(data, {
             abortEarly: false,

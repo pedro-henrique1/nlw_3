@@ -1,25 +1,28 @@
-import React from "react";
+import React, {useEffect, useState,} from "react";
 import {Link} from "react-router-dom"
-import {FiPlus} from "react-icons/fi"
+import {FiPlus, FiArrowRight} from "react-icons/fi"
 import {Map, TileLayer, Marker, Popup} from "react-leaflet"
 import mapMarkerImg from "../images/Local.svg"
-import Leaflet from "leaflet"
-
 import "../styles/pages/OrphanagesMap.css"
-import "leaflet/dist/leaflet.css"
+import api from "../services/api";
+import happyMapIcon from "../utils/mapIcon";
 
 
-
-const mayIcon = Leaflet.icon({
-    iconUrl: mapMarkerImg,
-    iconSize: [58, 68],
-    iconAnchor: [29, 68],
-    popupAnchor: [170, 2]
-})
-
-function Orfanato() {
+interface Orphanage {
+    id: number,
+    latitude: number,
+    longitude: number,
+    name: string
+}
 
 
+function OrphanagesMap() {
+    const [orphanages, setOrphanages] = useState<Orphanage[]>([])
+    useEffect(() => {
+        api.get("orphanages").then(response => {
+            setOrphanages(response.data)
+        })
+    }, [])
     return (
         <div id="page-map">
             <aside>
@@ -35,20 +38,30 @@ function Orfanato() {
                 </footer>
 
             </aside>
-            <Map center={[-22.0196667, -44.3147937]}
+            <Map
+                center={[-22.0196667, -44.3147937]}
                  zoom={15}
                  style={{width: "100%", height: "100%"}}>
 
                 <TileLayer
                     // url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    url={ `https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGVkcm9oaWZkZ2lyZ25pcnRpYm5nZmlibmciLCJhIjoiY2tnOXgwdGZwMDFqMjJ6cnZmNGQ5aXhhYiJ9.ytkRAceC9Iy5-iVhGs8zwQ` }
+                    url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGVkcm9oaWZkZ2lyZ25pcnRpYm5nZmlibmciLCJhIjoiY2tnOXgwdGZwMDFqMjJ6cnZmNGQ5aXhhYiJ9.ytkRAceC9Iy5-iVhGs8zwQ`}
                 />
-                <Marker icon={mayIcon} position={[-22.0196667, -44.3147937]} >
-                <Popup closeButton={false} minWidth={240}  maxWidth={240}> Lar das meninas </Popup>
-                </Marker>
+                {orphanages.map(orphanage => {
+                    return (
+                        <Marker key={orphanage.id} icon={happyMapIcon}  position={[orphanage.latitude, orphanage.longitude]}>
+                            <Popup closeButton={false} className="map-popup" minWidth={240}
+                                   maxWidth={240}> {orphanage.name}
+                                <Link to={`/orphanages/${orphanage.id}`}>
+                                    <FiArrowRight size={20} color="#fff"/>
+                                </Link>
+                            </Popup>
+                        </Marker>
+                    )
+                })}
             </Map>
 
-            <Link to="" className="create-orphanage">
+            <Link to="/orphanages/create" className="create-orphanage">
                 <FiPlus size={32} color="#fff"/>
             </Link>
 
@@ -57,4 +70,4 @@ function Orfanato() {
 }
 
 
-export default Orfanato;
+export default OrphanagesMap;
