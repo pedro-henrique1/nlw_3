@@ -1,1 +1,1 @@
-<h1 aling="cente"r>Happy</h1>
+<h1 aling=center>Happy</h1>
