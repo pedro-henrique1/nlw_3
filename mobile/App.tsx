@@ -4,12 +4,12 @@ import {Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold} from "@expo-goo
 import  Router from "./src/routes"
 
 export default function App() {
-    const [fonstLoaded] = useFonts({
+    const [fontLoaded] = useFonts({
         Nunito_600SemiBold,
         Nunito_700Bold,
         Nunito_800ExtraBold
     })
-    if (!fonstLoaded) {
+    if (!fontLoaded) {
         return null
     }
     return (
@@ -17,4 +17,5 @@ export default function App() {
     )
 
 }
+
 

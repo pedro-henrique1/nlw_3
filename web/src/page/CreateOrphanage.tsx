@@ -1,29 +1,28 @@
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import {Map, Marker, TileLayer} from 'react-leaflet';
 import {LeafletMouseEvent} from "leaflet"
-import { useHistory} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 import '../styles/pages/create-orphanage.css';
 import Sidebar from "../components/Sidebar"
 import {FiPlus} from "react-icons/fi"
 import happyMapIcon from "../utils/mapIcon";
-import {Simulate} from "react-dom/test-utils";
-import select = Simulate.select;
 import api from "../services/api";
 
 
-export default function CreateOrphanage() {
+
+async function CreateOrphanage()  {
     const history = useHistory()
     const [position, setPosition] = useState({latitude: 0, longitude: 0})
     const [name, setName] = useState("")
-    const [about, setabout] = useState("")
-    const [openingHours, setopeningHours] = useState("")
-    const [openOnWeekends, setOpenOnWeekends] = useState("true")
-    const [instructions, setinstructions] = useState("")
+    const [about, setAbout] = useState("")
+    const [instructions, setInstructions] = useState("")
     const {latitude, longitude} = position
+    const [openingHours, setOpeningHours] = useState("")
+    const [openOnWeekends, setOpenOnWeekends] = useState("true")
     const [image, setImage] = useState<File[]>([])
-    const [previrwImage, setPrevirwImage] = useState<string[]>([])
+    const [previewImage, setPreviewImage] = useState<string[]>([])
 
-    async function handleMap  (event: LeafletMouseEvent)  {
+     function handleMap(event: LeafletMouseEvent) {
         const {lat, lng} = event.latlng
         setPosition({
             latitude: lat,
@@ -43,7 +42,7 @@ export default function CreateOrphanage() {
         const selectedImagePreview = selectImages.map(image => {
             return URL.createObjectURL(image)
         })
-        setPrevirwImage(selectedImagePreview)
+        setPreviewImage(selectedImagePreview)
     }
 
     const data = new FormData()
@@ -53,17 +52,17 @@ export default function CreateOrphanage() {
     data.append("latitude", String(latitude))
     data.append("longitude", String(longitude))
     data.append("instructions", instructions)
-    data.append("open_hours", opening_hours)
-    data.append("open_on_weekends", String(open_on_weekends))
+    data.append("opening_hours", openingHours)
+    data.append("open_on_weekends", String(openOnWeekends))
 
     image.forEach(image => {
         data.append("image", image)
     })
 
-   await api.post("orphanages", data)
+    await api.post("orphanages", data)
 
     history.push("/app")
-}
+
     return (
         <div id="page-create-orphanage">
             <Sidebar/>
@@ -100,16 +99,16 @@ export default function CreateOrphanage() {
                                 htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
                             <textarea id="about" maxLength={300}
                                       value={about}
-                                      onChange={event => setabout(event.target.value)}/>
+                                      onChange={event => setAbout(event.target.value)}/>
                         </div>
 
                         <div className="input-block">
                             <label htmlFor="images">Fotos</label>
-                            {previrwImage.map(image => {
+                            {previewImage.map(image => {
                                 return (
-                                    <img key={image} src={image} />
+                                    <img key={image} src={image} alt="image"/>
                                 )
-                            })  }
+                            })}
                             <div className="image Container">
                                 <label className="new-image">
                                     <FiPlus size={24} color="#15b6d6"/>
@@ -128,14 +127,14 @@ export default function CreateOrphanage() {
 
                             <textarea id="instructions"
                                       value={instructions}
-                                      onChange={event => setinstructions(event.target.value)}/>
+                                      onChange={event => setInstructions(event.target.value)}/>
                         </div>
 
                         <div className="input-block">
                             <label htmlFor="opening_hours">horario de funcinamento</label>
                             <input id="opening_hours"
                                    value={openingHours}
-                                   onChange={event => setopeningHours(event.target.value)}/>
+                                   onChange={event => setOpeningHours(event.target.value)}/>
                         </div>
 
                         <div className="input-block">
@@ -164,6 +163,7 @@ export default function CreateOrphanage() {
     );
 }
 
+export default CreateOrphanage
 // return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
 
 
