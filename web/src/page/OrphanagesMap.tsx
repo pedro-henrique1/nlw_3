@@ -7,6 +7,7 @@ import "../styles/pages/OrphanagesMap.css"
 import api from "../services/api";
 import happyMapIcon from "../utils/mapIcon";
 
+require("dotenv").config()
 
 interface Orphanage {
     id: number,
@@ -40,16 +41,17 @@ function OrphanagesMap() {
             </aside>
             <Map
                 center={[-22.0196667, -44.3147937]}
-                 zoom={15}
-                 style={{width: "100%", height: "100%"}}>
+                zoom={15}
+                style={{width: "100%", height: "100%"}}>
 
                 <TileLayer
                     // url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGVkcm9oaWZkZ2lyZ25pcnRpYm5nZmlibmciLCJhIjoiY2tnOXgwdGZwMDFqMjJ6cnZmNGQ5aXhhYiJ9.ytkRAceC9Iy5-iVhGs8zwQ`}
+                    url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_TOKEN_MAP}`}
                 />
                 {orphanages.map(orphanage => {
                     return (
-                        <Marker key={orphanage.id} icon={happyMapIcon}  position={[orphanage.latitude, orphanage.longitude]}>
+                        <Marker key={orphanage.id} icon={happyMapIcon}
+                                position={[orphanage.latitude, orphanage.longitude]}>
                             <Popup closeButton={false} className="map-popup" minWidth={240}
                                    maxWidth={240}> {orphanage.name}
                                 <Link to={`/orphanages/${orphanage.id}`}>

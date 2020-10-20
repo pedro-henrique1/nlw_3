@@ -8,9 +8,10 @@ import {FiPlus} from "react-icons/fi"
 import happyMapIcon from "../utils/mapIcon";
 import api from "../services/api";
 
+require('dotenv').config()
 
 
-async function CreateOrphanage()  {
+async function CreateOrphanage() {
     const history = useHistory()
     const [position, setPosition] = useState({latitude: 0, longitude: 0})
     const [name, setName] = useState("")
@@ -22,7 +23,7 @@ async function CreateOrphanage()  {
     const [image, setImage] = useState<File[]>([])
     const [previewImage, setPreviewImage] = useState<string[]>([])
 
-     function handleMap(event: LeafletMouseEvent) {
+    function handleMap(event: LeafletMouseEvent) {
         const {lat, lng} = event.latlng
         setPosition({
             latitude: lat,
@@ -78,7 +79,7 @@ async function CreateOrphanage()  {
                             onClick={handleMap}
                         >
                             <TileLayer
-                                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGVkcm9oaWZkZ2lyZ25pcnRpYm5nZmlibmciLCJhIjoiY2tnOXgwdGZwMDFqMjJ6cnZmNGQ5aXhhYiJ9.ytkRAceC9Iy5-iVhGs8zwQ`}
+                                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_TOKEN_MAP}`}
                             />
                             {position.latitude !== 0 && (
                                 <Marker interactive={false} icon={happyMapIcon}

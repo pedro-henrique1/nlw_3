@@ -9,6 +9,8 @@ import '../styles/pages/orphanage.css';
 import Sidebar from "../components/Sidebar";
 import api from "../services/api";
 import {useParams} from "react-router-dom"
+require('dotenv').config()
+
 
 const happyMapIcon = L.icon({
     iconUrl: mapMarkerImg,
@@ -92,7 +94,7 @@ export default function Orphanage() {
                                 doubleClickZoom={false}
                             >
                                 <TileLayer
-                                    url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicGVkcm9oaWZkZ2lyZ25pcnRpYm5nZmlibmciLCJhIjoiY2tnOXgwdGZwMDFqMjJ6cnZmNGQ5aXhhYiJ9.ytkRAceC9Iy5-iVhGs8zwQ`}
+                                    url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_TOKEN_MAP}`}
                                 />
                                 <Marker interactive={false} icon={happyMapIcon}
                                         position={[-27.2092052, -49.6401092]}/>
