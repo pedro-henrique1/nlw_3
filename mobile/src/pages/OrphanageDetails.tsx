@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { 
-  Image, 
-  View, 
-  ScrollView, 
-  Text, 
-  StyleSheet, 
-  Dimensions, 
-  TouchableOpacity, 
+import {
+  Image,
+  View,
+  ScrollView,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
   Linking
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
@@ -14,7 +14,7 @@ import { Feather, FontAwesome } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native'
 
-import mapMarkerImg from '../images/map-marker.png';
+import mapMarkerImg from '../images/mapMarker.png';
 import api from '../services/api';
 
 interface OrphanageDetailsParams {
@@ -60,17 +60,17 @@ export default function OrphanageDetails() {
   const handleOpenGoogleMapsRoutes = () => {
     Linking.openURL(`http://maps.google.com/maps?saddr=${orphanage.latitude},${orphanage.longitude}`);
   }
- 
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.imagesContainer}>
         <ScrollView horizontal pagingEnabled>
           {orphanage.images.map((image) => {
             return (
-              <Image 
+              <Image
                 key={image.id}
-                style={styles.image} 
-                source={{ uri: image.url }} 
+                style={styles.image}
+                source={{ uri: image.url }}
               />
             );
           })}
@@ -80,24 +80,24 @@ export default function OrphanageDetails() {
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{orphanage.name}</Text>
         <Text style={styles.description}>{orphanage.about}</Text>
-      
+
         <View style={styles.mapContainer}>
-          <MapView 
+          <MapView
             initialRegion={{
               latitude: orphanage.latitude,
               longitude: orphanage.longitude,
               latitudeDelta: 0.008,
               longitudeDelta: 0.008,
-            }} 
+            }}
             zoomEnabled={false}
             pitchEnabled={false}
             scrollEnabled={false}
             rotateEnabled={false}
             style={styles.mapStyle}
           >
-            <Marker 
+            <Marker
               icon={mapMarkerImg}
-              coordinate={{ 
+              coordinate={{
                 latitude: orphanage.latitude,
                 longitude: orphanage.longitude,
               }}
@@ -108,7 +108,7 @@ export default function OrphanageDetails() {
             <Text style={styles.routesText}>Ver rotas no Google Maps</Text>
           </TouchableOpacity>
         </View>
-      
+
         <View style={styles.separator} />
 
         <Text style={styles.title}>Instruções para visita</Text>

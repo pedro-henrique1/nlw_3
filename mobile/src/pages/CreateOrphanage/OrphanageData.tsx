@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  ScrollView, 
-  View, 
-  StyleSheet, 
-  Switch, 
-  Text, 
-  TextInput, 
-  TouchableOpacity, 
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  TouchableOpacity,
   Image
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -38,7 +38,7 @@ export default function OrphanageData() {
 
   const handleCreateOrphanage = () => {
     const { latitude, longitude } = position;
-
+  console.log(position)
     const data = new FormData();
 
     data.append('name', name);
@@ -51,7 +51,7 @@ export default function OrphanageData() {
 
     images.forEach((image, index) => {
       data.append('images', {
-        name: `image_${index}.jpg`, 
+        name: `image_${index}.jpg`,
         type: 'image/jpg',
         uri: image
       } as any);
@@ -72,7 +72,7 @@ export default function OrphanageData() {
     if (status !== 'granted') {
       return alert('Necessário conceder acesso as fotos.');
     }
-    
+
     const result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
       quality: 1,
@@ -108,14 +108,14 @@ export default function OrphanageData() {
       {/* <Text style={styles.label}>Whatsapp</Text>
       <TextInput
         style={styles.input}
-      /> */} 
+      /> */}
 
       <Text style={styles.label}>Fotos</Text>
 
       <View style={styles.uploadedImageContainer}>
         {images.map((image) => {
           return (
-            <Image 
+            <Image
               key={image}
               style={styles.uploadedImage}
               source={{ uri: image }}
@@ -147,8 +147,8 @@ export default function OrphanageData() {
 
       <View style={styles.switchContainer}>
         <Text style={styles.label}>Atende final de semana?</Text>
-        <Switch 
-          thumbColor="#fff" 
+        <Switch
+          thumbColor="#fff"
           trackColor={{ false: '#ccc', true: '#39CC83' }}
           value={open_on_weekends}
           onValueChange={setOpenOnWeekends}
