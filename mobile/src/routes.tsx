@@ -5,10 +5,10 @@ import {createStackNavigator} from "@react-navigation/stack";
 const {Navigator, Screen} = createStackNavigator()
 
 import OrphanagesMap from './pages/OrphanagesMap'
-import OrphanagesDetails from "./pages/OrphanagesDatails"
+import OrphanagesDetails from "./pages/OrphanageDetails"
 
-import SelectMapPosition from "./pages/createOrphanages/SelectMapPosition"
-import OrphanagesData from "./pages/createOrphanages/OphanagesData";
+import SelectMapPosition from "./pages/CreateOrphanage/SelectMapPosition";
+import OrphanagesData from "./pages/CreateOrphanage/OrphanageData";
 import Header from "./components/Header";
 
 export default function Router() {
