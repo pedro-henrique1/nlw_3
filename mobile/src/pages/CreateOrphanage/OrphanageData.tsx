@@ -38,7 +38,7 @@ export default function OrphanageData() {
 
   const handleCreateOrphanage = () => {
     const { latitude, longitude } = position;
-  console.log(position)
+    console.log(position)
     const data = new FormData();
 
     data.append('name', name);

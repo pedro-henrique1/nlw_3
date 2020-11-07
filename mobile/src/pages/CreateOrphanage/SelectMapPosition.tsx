@@ -11,10 +11,10 @@ export default function SelectMapPosition() {
   const navigation = useNavigation();
 
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
-  console.log(position)
   const handleNextStep = () => {
     navigation.navigate('OrphanageData', { position });
   }
+  console.log(position)
 
   const handleSelectedMapPosition = (event: MapEvent) => {
     setPosition(event.nativeEvent.coordinate);
