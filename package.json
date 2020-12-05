@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "react-native-screens": "^2.11.0"
+    "react-native-screens": "2.15.0"
   }
 }
