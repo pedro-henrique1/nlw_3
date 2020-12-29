@@ -11,7 +11,9 @@
 
 ## ⚒️  tecnologia
 👉 Reactjs 
+
 👉 Node 
+
 👉 React native 
 
 
