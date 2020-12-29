@@ -10,9 +10,9 @@
 <h4 align="center"> 🚀 Finalizado</h4>
 
 ## ⚒️  tecnologia
-👉 Reactjs
-👉 Node
-👉 React native
+👉 Reactjs 
+👉 Node 
+👉 React native 
 
 
 
