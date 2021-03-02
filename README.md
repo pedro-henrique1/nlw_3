@@ -5,7 +5,7 @@
 
 
 # descrição do projeto
-<p align="center"> Foi um projeto feito na semana NLW pela racketseat</p>
+<p align="center"> Foi um projeto feito na semana NLW pela Rocketseat</p>
 
 <h4 align="center"> 🚀 Finalizado</h4>
 
