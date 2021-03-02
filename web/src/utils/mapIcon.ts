@@ -1,5 +1,5 @@
 import L from "leaflet";
-import mapMarkerImg from "../images/Local.svg";
+import mapMarkerImg from "../assets/images/map-marker.svg";
 
 const happyMapIcon = L.icon({
     iconUrl: mapMarkerImg,

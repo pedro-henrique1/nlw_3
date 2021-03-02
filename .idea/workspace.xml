@@ -2,17 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c85ecb4f-2414-4fe1-8533-fde6bd0f8371" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/code-comments.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cssxfire.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/nlw_3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nlw_3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Map/happMapIcon.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Map/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/PrimaryButton/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/PrimaryButton/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Sidebar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/CreateOrphanage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/Landing/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/Orphanage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/OrphanagesMap/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/images/Ilustra02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/images/landing-ilustra.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/images/Local.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/images/map-marker.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/images/Logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/page/CreateOrphanage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/page/Landing.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/page/Orphanage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/page/OrphanagesMap.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/component/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Sidebar/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/pages/OrphanagesMap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/OrphanagesMap/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/pages/create-orphanage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/CreateOrphanage/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/pages/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Landing/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/pages/orphanage.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Orphanage/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/utils/mapIcon.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/mapIcon.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +40,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1mhmpyFJ5x0hl8U7rOTjxqfh3o5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,8 +60,68 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/components" />
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/components/Sidebar" />
+      <recent name="$PROJECT_DIR$/web/src/components" />
+      <recent name="$PROJECT_DIR$/web/src/assets" />
+      <recent name="$PROJECT_DIR$/web/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v14.15.0/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v14.15.4/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,10 +132,26 @@
       <option name="presentableId" value="Default" />
       <updated>1609954388698</updated>
       <workItem from="1609954394897" duration="194000" />
+      <workItem from="1614710137690" duration="1781000" />
+      <workItem from="1614711950765" duration="1687000" />
+      <workItem from="1614713860959" duration="1814000" />
+      <workItem from="1614715888609" duration="3061000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
